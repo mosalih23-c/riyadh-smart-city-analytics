@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c3dc4f626b94de7347ff10eedbd7007e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed; bottom: 25px; left: 25px; z-index: 9999;
+        background: white; padding: 12px; border: 1px solid #999;
+        border-radius: 6px; font-size: 13px;">
+        <b>Station Classification</b><br>
+        <span style="color:red;">●</span> Traffic<br>
+        <span style="color:green;">●</span> Suburban<br>
+        <span style="color:blue;">●</span> Background stations<br>
+        <span style="color:purple;">●</span> Mobile
+    </div>
+    
+    
+            <div class="folium-map" id="map_c3dc4f626b94de7347ff10eedbd7007e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c3dc4f626b94de7347ff10eedbd7007e = L.map(
+                "map_c3dc4f626b94de7347ff10eedbd7007e",
+                {
+                    center: [24.701092347058825, 46.73090885882352],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+
+            
+
+        
+    
+            var tile_layer_141f10ea3d05fa3864d203912afdc382 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_141f10ea3d05fa3864d203912afdc382.addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+            var circle_marker_740666a378486f66a21cca2d558a6ae2 = L.circleMarker(
+                [24.700139, 46.6785],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_1da671bfdc817a91a1d0cce8b819954d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_82ed6e75bb51358256052765397f9b2c = $(`<div id="html_82ed6e75bb51358256052765397f9b2c" style="width: 100.0%; height: 100.0%;">         <b>King Fahad Rd</b><br>         Classification: Traffic<br>         Latitude: 24.700139<br>         Longitude: 46.678500         </div>`)[0];
+                popup_1da671bfdc817a91a1d0cce8b819954d.setContent(html_82ed6e75bb51358256052765397f9b2c);
+            
+        
+
+        circle_marker_740666a378486f66a21cca2d558a6ae2.bindPopup(popup_1da671bfdc817a91a1d0cce8b819954d)
+        ;
+
+        
+    
+    
+            circle_marker_740666a378486f66a21cca2d558a6ae2.bindTooltip(
+                `<div>
+                     King Fahad Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28df8aae3e6c67b27bfe21677a80480f = L.circleMarker(
+                [24.685105, 46.703063],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_1918594420c1e36526c71fb73feba6dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce6022f2d11f3f458eb21f4373d8d31f = $(`<div id="html_ce6022f2d11f3f458eb21f4373d8d31f" style="width: 100.0%; height: 100.0%;">         <b>Makkah Rd</b><br>         Classification: Traffic<br>         Latitude: 24.685105<br>         Longitude: 46.703063         </div>`)[0];
+                popup_1918594420c1e36526c71fb73feba6dc.setContent(html_ce6022f2d11f3f458eb21f4373d8d31f);
+            
+        
+
+        circle_marker_28df8aae3e6c67b27bfe21677a80480f.bindPopup(popup_1918594420c1e36526c71fb73feba6dc)
+        ;
+
+        
+    
+    
+            circle_marker_28df8aae3e6c67b27bfe21677a80480f.bindTooltip(
+                `<div>
+                     Makkah Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4353c207e53d9d0818a20240ae61d201 = L.circleMarker(
+                [24.762272, 46.650878],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_4c6b48d673bb361fbe527a98708fcb5b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b7796b6a9c141b3769993e6705e8180 = $(`<div id="html_3b7796b6a9c141b3769993e6705e8180" style="width: 100.0%; height: 100.0%;">         <b>Northern Ring Rd</b><br>         Classification: Traffic<br>         Latitude: 24.762272<br>         Longitude: 46.650878         </div>`)[0];
+                popup_4c6b48d673bb361fbe527a98708fcb5b.setContent(html_3b7796b6a9c141b3769993e6705e8180);
+            
+        
+
+        circle_marker_4353c207e53d9d0818a20240ae61d201.bindPopup(popup_4c6b48d673bb361fbe527a98708fcb5b)
+        ;
+
+        
+    
+    
+            circle_marker_4353c207e53d9d0818a20240ae61d201.bindTooltip(
+                `<div>
+                     Northern Ring Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e04221f317e76e7c45c7d43f7febfa52 = L.circleMarker(
+                [24.723857, 46.756673],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_fdb4efb724d91fde6659b901a709bdcc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bee313a8847df71a514fc2ab7e955159 = $(`<div id="html_bee313a8847df71a514fc2ab7e955159" style="width: 100.0%; height: 100.0%;">         <b>Eastern Ring Rd</b><br>         Classification: Traffic<br>         Latitude: 24.723857<br>         Longitude: 46.756673         </div>`)[0];
+                popup_fdb4efb724d91fde6659b901a709bdcc.setContent(html_bee313a8847df71a514fc2ab7e955159);
+            
+        
+
+        circle_marker_e04221f317e76e7c45c7d43f7febfa52.bindPopup(popup_fdb4efb724d91fde6659b901a709bdcc)
+        ;
+
+        
+    
+    
+            circle_marker_e04221f317e76e7c45c7d43f7febfa52.bindTooltip(
+                `<div>
+                     Eastern Ring Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0176d282c1544737d35bdb3f5701657e = L.circleMarker(
+                [24.683721, 46.752632],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_23622566fb6eef4126d840a314700180 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a25a167162e7b0aa7d42a0a04d90ed68 = $(`<div id="html_a25a167162e7b0aa7d42a0a04d90ed68" style="width: 100.0%; height: 100.0%;">         <b>Al Zamroud</b><br>         Classification: Suburban<br>         Latitude: 24.683721<br>         Longitude: 46.752632         </div>`)[0];
+                popup_23622566fb6eef4126d840a314700180.setContent(html_a25a167162e7b0aa7d42a0a04d90ed68);
+            
+        
+
+        circle_marker_0176d282c1544737d35bdb3f5701657e.bindPopup(popup_23622566fb6eef4126d840a314700180)
+        ;
+
+        
+    
+    
+            circle_marker_0176d282c1544737d35bdb3f5701657e.bindTooltip(
+                `<div>
+                     Al Zamroud
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4f4b1a3b5a34247061bd8d676f53a7ec = L.circleMarker(
+                [24.766047, 46.761886],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_12369d53a35e9526855f6ad0c45183e6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3dde09bbc957eeb188d6cb7880cdc80f = $(`<div id="html_3dde09bbc957eeb188d6cb7880cdc80f" style="width: 100.0%; height: 100.0%;">         <b>King Faisal dist</b><br>         Classification: Suburban<br>         Latitude: 24.766047<br>         Longitude: 46.761886         </div>`)[0];
+                popup_12369d53a35e9526855f6ad0c45183e6.setContent(html_3dde09bbc957eeb188d6cb7880cdc80f);
+            
+        
+
+        circle_marker_4f4b1a3b5a34247061bd8d676f53a7ec.bindPopup(popup_12369d53a35e9526855f6ad0c45183e6)
+        ;
+
+        
+    
+    
+            circle_marker_4f4b1a3b5a34247061bd8d676f53a7ec.bindTooltip(
+                `<div>
+                     King Faisal dist
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_140fbeffcfd355c6d75efbb71c2e9647 = L.circleMarker(
+                [24.77438, 46.529476],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_ebefefb846e50854654d6a084913b92a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1aeb09201f097a323319e14fff50ac98 = $(`<div id="html_1aeb09201f097a323319e14fff50ac98" style="width: 100.0%; height: 100.0%;">         <b>Wadi Hanifa</b><br>         Classification: Background stations<br>         Latitude: 24.774380<br>         Longitude: 46.529476         </div>`)[0];
+                popup_ebefefb846e50854654d6a084913b92a.setContent(html_1aeb09201f097a323319e14fff50ac98);
+            
+        
+
+        circle_marker_140fbeffcfd355c6d75efbb71c2e9647.bindPopup(popup_ebefefb846e50854654d6a084913b92a)
+        ;
+
+        
+    
+    
+            circle_marker_140fbeffcfd355c6d75efbb71c2e9647.bindTooltip(
+                `<div>
+                     Wadi Hanifa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca356ac91490820f53ddf67c4b9a3b1e = L.circleMarker(
+                [24.751314, 46.868278],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_de436e865ae58a70ffffa367220b92df = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48597b16952a66a9b866d7132cb487cb = $(`<div id="html_48597b16952a66a9b866d7132cb487cb" style="width: 100.0%; height: 100.0%;">         <b>National Guard Hospital</b><br>         Classification: Background stations<br>         Latitude: 24.751314<br>         Longitude: 46.868278         </div>`)[0];
+                popup_de436e865ae58a70ffffa367220b92df.setContent(html_48597b16952a66a9b866d7132cb487cb);
+            
+        
+
+        circle_marker_ca356ac91490820f53ddf67c4b9a3b1e.bindPopup(popup_de436e865ae58a70ffffa367220b92df)
+        ;
+
+        
+    
+    
+            circle_marker_ca356ac91490820f53ddf67c4b9a3b1e.bindTooltip(
+                `<div>
+                     National Guard Hospital
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8981b74ec8c57c17c4ffa54eaa6ace34 = L.circleMarker(
+                [24.9595, 47.025361],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_2fa7c9743206f98f6ca6f16e438cb862 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e0883b96e693b7cbdd9ee2b2ec33581d = $(`<div id="html_e0883b96e693b7cbdd9ee2b2ec33581d" style="width: 100.0%; height: 100.0%;">         <b>SWCC Station 5</b><br>         Classification: Mobile<br>         Latitude: 24.959500<br>         Longitude: 47.025361         </div>`)[0];
+                popup_2fa7c9743206f98f6ca6f16e438cb862.setContent(html_e0883b96e693b7cbdd9ee2b2ec33581d);
+            
+        
+
+        circle_marker_8981b74ec8c57c17c4ffa54eaa6ace34.bindPopup(popup_2fa7c9743206f98f6ca6f16e438cb862)
+        ;
+
+        
+    
+    
+            circle_marker_8981b74ec8c57c17c4ffa54eaa6ace34.bindTooltip(
+                `<div>
+                     SWCC Station 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99788d70a41e726ba77bdb6ad820681c = L.circleMarker(
+                [24.578817, 46.654614],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_00b3ab8fc663c13ee1be39dc224dc6c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f3d11691f0f9f97ef04707fc20f448f8 = $(`<div id="html_f3d11691f0f9f97ef04707fc20f448f8" style="width: 100.0%; height: 100.0%;">         <b>Al Zahrah</b><br>         Classification: Suburban<br>         Latitude: 24.578817<br>         Longitude: 46.654614         </div>`)[0];
+                popup_00b3ab8fc663c13ee1be39dc224dc6c6.setContent(html_f3d11691f0f9f97ef04707fc20f448f8);
+            
+        
+
+        circle_marker_99788d70a41e726ba77bdb6ad820681c.bindPopup(popup_00b3ab8fc663c13ee1be39dc224dc6c6)
+        ;
+
+        
+    
+    
+            circle_marker_99788d70a41e726ba77bdb6ad820681c.bindTooltip(
+                `<div>
+                     Al Zahrah
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1ff739771d8c57e19d20e1c10826612 = L.circleMarker(
+                [24.568629, 46.698853],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_ffbe6980d6e892e83e71c6ffb6ad3c27 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_89a34796661f746e8fbaed79c0cf25db = $(`<div id="html_89a34796661f746e8fbaed79c0cf25db" style="width: 100.0%; height: 100.0%;">         <b>Al Shifa</b><br>         Classification: Suburban<br>         Latitude: 24.568629<br>         Longitude: 46.698853         </div>`)[0];
+                popup_ffbe6980d6e892e83e71c6ffb6ad3c27.setContent(html_89a34796661f746e8fbaed79c0cf25db);
+            
+        
+
+        circle_marker_a1ff739771d8c57e19d20e1c10826612.bindPopup(popup_ffbe6980d6e892e83e71c6ffb6ad3c27)
+        ;
+
+        
+    
+    
+            circle_marker_a1ff739771d8c57e19d20e1c10826612.bindTooltip(
+                `<div>
+                     Al Shifa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9438b08739b5957341b2afd9bf7ffdd = L.circleMarker(
+                [24.598469, 46.744378],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_8fea7244b705a8d0f9de2cbb47e24b6f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2ca54a395d5fff64c8113ce43c01e949 = $(`<div id="html_2ca54a395d5fff64c8113ce43c01e949" style="width: 100.0%; height: 100.0%;">         <b>Southern Ring Rd</b><br>         Classification: Traffic<br>         Latitude: 24.598469<br>         Longitude: 46.744378         </div>`)[0];
+                popup_8fea7244b705a8d0f9de2cbb47e24b6f.setContent(html_2ca54a395d5fff64c8113ce43c01e949);
+            
+        
+
+        circle_marker_d9438b08739b5957341b2afd9bf7ffdd.bindPopup(popup_8fea7244b705a8d0f9de2cbb47e24b6f)
+        ;
+
+        
+    
+    
+            circle_marker_d9438b08739b5957341b2afd9bf7ffdd.bindTooltip(
+                `<div>
+                     Southern Ring Rd
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9732d5630ebdcdef17350e6b62a8aac = L.circleMarker(
+                [24.5833879, 46.7836566],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_bb37d80716aa64ab4638fcd7d1eb2eb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3222636341de40abe8266a44b481defe = $(`<div id="html_3222636341de40abe8266a44b481defe" style="width: 100.0%; height: 100.0%;">         <b>Assanabil Garden</b><br>         Classification: Suburban<br>         Latitude: 24.583388<br>         Longitude: 46.783657         </div>`)[0];
+                popup_bb37d80716aa64ab4638fcd7d1eb2eb0.setContent(html_3222636341de40abe8266a44b481defe);
+            
+        
+
+        circle_marker_b9732d5630ebdcdef17350e6b62a8aac.bindPopup(popup_bb37d80716aa64ab4638fcd7d1eb2eb0)
+        ;
+
+        
+    
+    
+            circle_marker_b9732d5630ebdcdef17350e6b62a8aac.bindTooltip(
+                `<div>
+                     Assanabil Garden
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_183b83da3cc21f443ab98476712537bf = L.circleMarker(
+                [24.383322, 46.897128],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_be6c365a5a1e91d51a23ac584438289d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8bac022881694db7f4341cf6bd6ee12c = $(`<div id="html_8bac022881694db7f4341cf6bd6ee12c" style="width: 100.0%; height: 100.0%;">         <b>AlHair</b><br>         Classification: Background stations<br>         Latitude: 24.383322<br>         Longitude: 46.897128         </div>`)[0];
+                popup_be6c365a5a1e91d51a23ac584438289d.setContent(html_8bac022881694db7f4341cf6bd6ee12c);
+            
+        
+
+        circle_marker_183b83da3cc21f443ab98476712537bf.bindPopup(popup_be6c365a5a1e91d51a23ac584438289d)
+        ;
+
+        
+    
+    
+            circle_marker_183b83da3cc21f443ab98476712537bf.bindTooltip(
+                `<div>
+                     AlHair
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49840d747aafa83bec16ef14206eebaf = L.circleMarker(
+                [24.992851, 46.527847],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_31f719ab64ce33ee32604089f7d218f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe4263808925542cb48eb05fed99d340 = $(`<div id="html_fe4263808925542cb48eb05fed99d340" style="width: 100.0%; height: 100.0%;">         <b>Prince Sultan Humanity City</b><br>         Classification: Background stations<br>         Latitude: 24.992851<br>         Longitude: 46.527847         </div>`)[0];
+                popup_31f719ab64ce33ee32604089f7d218f0.setContent(html_fe4263808925542cb48eb05fed99d340);
+            
+        
+
+        circle_marker_49840d747aafa83bec16ef14206eebaf.bindPopup(popup_31f719ab64ce33ee32604089f7d218f0)
+        ;
+
+        
+    
+    
+            circle_marker_49840d747aafa83bec16ef14206eebaf.bindTooltip(
+                `<div>
+                     Prince Sultan Humanity City
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ce5c17d2e533175f041e34c37468b7d = L.circleMarker(
+                [24.758315, 46.671171],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_4b4c7f4c8d165a7a7c451aa391dc493a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50b283c5418a94efde56b87f9aad6eb5 = $(`<div id="html_50b283c5418a94efde56b87f9aad6eb5" style="width: 100.0%; height: 100.0%;">         <b>Al Marooj</b><br>         Classification: Suburban<br>         Latitude: 24.758315<br>         Longitude: 46.671171         </div>`)[0];
+                popup_4b4c7f4c8d165a7a7c451aa391dc493a.setContent(html_50b283c5418a94efde56b87f9aad6eb5);
+            
+        
+
+        circle_marker_0ce5c17d2e533175f041e34c37468b7d.bindPopup(popup_4b4c7f4c8d165a7a7c451aa391dc493a)
+        ;
+
+        
+    
+    
+            circle_marker_0ce5c17d2e533175f041e34c37468b7d.bindTooltip(
+                `<div>
+                     Al Marooj
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e0d5e355d840c667ae9450a628294ac = L.circleMarker(
+                [24.648444, 46.721056],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_c3dc4f626b94de7347ff10eedbd7007e);
+        
+    
+        var popup_178160eb89c1e0174eed7bc34fc196b8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eef4426b8ec472381433f52bbe056a4c = $(`<div id="html_eef4426b8ec472381433f52bbe056a4c" style="width: 100.0%; height: 100.0%;">         <b>Alamal</b><br>         Classification: Suburban<br>         Latitude: 24.648444<br>         Longitude: 46.721056         </div>`)[0];
+                popup_178160eb89c1e0174eed7bc34fc196b8.setContent(html_eef4426b8ec472381433f52bbe056a4c);
+            
+        
+
+        circle_marker_6e0d5e355d840c667ae9450a628294ac.bindPopup(popup_178160eb89c1e0174eed7bc34fc196b8)
+        ;
+
+        
+    
+    
+            circle_marker_6e0d5e355d840c667ae9450a628294ac.bindTooltip(
+                `<div>
+                     Alamal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

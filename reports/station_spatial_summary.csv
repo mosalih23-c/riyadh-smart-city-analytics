@@ -1,0 +1,5 @@
+Classification,station_count,mean_distance_km,max_distance_km
+Background stations,4,28.551,39.024
+Mobile,1,41.292,41.292
+Suburban,7,10.024,15.597
+Traffic,5,6.854,11.454

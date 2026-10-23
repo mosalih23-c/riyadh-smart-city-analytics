@@ -1,0 +1,12 @@
+column,lower_bound,upper_bound,candidate_count
+pm10,-1008.092,2003.225,71
+pm2_5,-73.198,190.369,77
+carbon_monoxide,53.365,445.615,78
+nitrogen_dioxide,-15.814,90.961,15
+sulphur_dioxide,-10.153,85.689,52
+ozone,-13.5,137.167,0
+aerosol_optical_depth,-0.048,0.986,16
+dust,-1901.948,3819.802,65
+uv_index,-0.465,3.806,0
+us_aqi,-845.646,1652.771,88
+european_aqi,-330.474,789.568,68
