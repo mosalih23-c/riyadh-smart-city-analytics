@@ -34,27 +34,52 @@ The project includes:
 - **Power BI:** Interactive dashboards and reporting
 - **Git and GitHub:** Version control and project documentation
 
+
 ## Project Structure
 
 ```text
-smart-city-analytics-riyadh/
+riyadh-smart-city-analytics/
 ├── dashboards/
+│   ├── cover_page.png
+│   ├── executive_dashboard.png
+│   └── riyadh_smart_city_dashboard.pbix
 ├── data/
 │   ├── raw/
+│   │   ├── air-quality-stations-in-riyadh-2025.csv
+│   │   ├── air_quality_historical.csv
+│   │   ├── city_info.csv
+│   │   ├── data_dictionary.csv
+│   │   └── dataset-metadata.json
 │   └── processed/
-├── notebooks/
+│       ├── riyadh_air_stations_clean.csv
+│       ├── riyadh_air_stations_geospatial.csv
+│       └── riyadh_air_stations.geojson
 ├── reports/
-└── src/
-    ├── create_station_map.py
-    ├── forecast_air_quality.py
-    ├── geospatial_analysis.py
-    ├── inspect_data.py
-    ├── plot_forecast_results.py
-    ├── prepare_stations.py
-    ├── quality_check.py
-    ├── station_spatial_summary.py
-    └── time_series_analysis.py
+│   ├── data_completeness.csv
+│   ├── monthly_air_quality.csv
+│   ├── monthly_pm2_5.png
+│   ├── monthly_pm10.png
+│   ├── monthly_us_aqi.png
+│   ├── monthly_european_aqi.png
+│   ├── pm25_forecast_metrics.csv
+│   ├── pm25_forecast_test_results.csv
+│   ├── pm25_actual_vs_predicted.png
+│   ├── pm25_prediction_error_distribution.png
+│   └── riyadh_air_quality_stations_map.html
+├── src/
+│   ├── create_station_map.py
+│   ├── forecast_air_quality.py
+│   ├── geospatial_analysis.py
+│   ├── inspect_data.py
+│   ├── plot_forecast_results.py
+│   ├── prepare_stations.py
+│   ├── quality_check.py
+│   ├── station_spatial_summary.py
+│   └── time_series_analysis.py
+├── requirements.txt
+└── README.md
 ```
+
 
 ## Data Sources and Scope
 
